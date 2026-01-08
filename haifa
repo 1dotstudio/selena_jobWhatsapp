@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مطلوب — Selena Cafe Lounge</title>
+  <meta name="description" content="تقديم سريع عبر واتساب — Selena Cafe Lounge" />
+  <meta name="theme-color" content="#f6f1ea" />
+
+  <!-- ✅ Google Analytics (GA4) — ضع كودك هنا عندما ترسله -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <style>
+    :root{
+      --bg:#f6f1ea;
+      --ink:#121212;
+      --muted:rgba(18,18,18,.70);
+      --line:rgba(18,18,18,.10);
+      --stone:#d5bba4;     /* حجر/بيج */
+      --stone2:#caa98b;
+      --dark:#121212;
+      --accent:#d5bba4;    /* أزرار */
+      --accentText:#121212;
+      --radius:18px;
+      --shadow:0 18px 60px rgba(0,0,0,.18);
+      --max:860px;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Naskh Arabic", "Noto Sans Arabic", "Cairo", "Tajawal", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0; font-family:var(--font); color:var(--ink); background:var(--bg);} 
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 14px 38px;}
+    .card{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); background:#ffffff;} 
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:520px;
+      display:flex;
+      align-items:flex-end;
+      padding:22px 18px 18px;
+      /*
+        هذا الجزء هو صورة الغلاف (Hero).
+        إذا لم تكن hero.jpg موجودة في نفس المجلد، سيظهر مكانها خلفية ناعمة بدل الرمادي.
+      */
+      background-color:#e9e2da;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(0,0,0,.45)),
+        radial-gradient(1200px 600px at 15% 0%, rgba(213,187,164,.55), transparent 60%),
+        radial-gradient(900px 520px at 85% 105%, rgba(202,169,139,.45), transparent 62%),
+        url("hero.jpg") center/cover no-repeat;
+    }
+
+    .brand{
+      position:absolute;
+      top:16px;
+      right:16px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:16px;
+      background:rgba(255,255,255,.55);
+      border:1px solid rgba(18,18,18,.10);
+      backdrop-filter: blur(6px);
+    }
+    .brand .mark{
+      width:40px; height:40px;
+      border-radius:12px;
+      border:1px solid rgba(18,18,18,.10);
+      background:rgba(18,18,18,.04);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:rgba(18,18,18,.82);
+    }
+    .brand .name{line-height:1.1; font-weight:800; letter-spacing:.2px;}
+    .brand .name small{display:block; font-weight:600; color:rgba(18,18,18,.68); font-size:12px; margin-top:2px;} 
+
+    .heroText{width:100%;}
+    .kicker{font-size:56px; font-weight:900; margin:0 0 10px; letter-spacing:.2px; color:#ffffff; text-shadow: 0 10px 30px rgba(0,0,0,.45);} 
+
+    .band{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:14px;
+      background:rgba(213,187,164,.92);
+      color:var(--dark);
+      font-weight:900;
+      font-size:26px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    }
+
+    .sub{margin:10px 0 0; color:rgba(255,255,255,.92); font-size:16px; line-height:1.65; text-shadow: 0 10px 26px rgba(0,0,0,.40);} 
+
+    .content{padding:18px; border-top:1px solid var(--line); background:linear-gradient(180deg, rgba(18,18,18,.02), rgba(18,18,18,.00));} 
+
+    .grid{display:grid; gap:12px;}
+    label{display:block; font-size:13px; color:rgba(18,18,18,.78); margin-bottom:6px;} 
+    .req{color:#ffb4b4; margin-right:6px;}
+    input, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(18,18,18,.12);
+      background:#ffffff;
+      color:var(--ink);
+      outline:none;
+      font-size:16px;
+    }
+    input::placeholder{color:rgba(18,18,18,.38)}
+    input:focus, select:focus{border-color:rgba(202,169,139,.90); box-shadow:0 0 0 4px rgba(202,169,139,.20);} 
+
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    @media (max-width:640px){
+      .kicker{font-size:44px}
+      .band{font-size:22px}
+      .hero{min-height:480px}
+      .two{grid-template-columns:1fr}
+    }
+
+    .actions{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;}
+    @media (max-width:640px){ .actions{grid-template-columns:1fr} }
+
+    .btn{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 14px;
+      border:none;
+      border-radius:16px;
+      cursor:pointer;
+      font-weight:900;
+      font-size:16px;
+    }
+    .btnPrimary{background:linear-gradient(135deg, var(--accent), var(--stone2)); color:var(--accentText);}
+    .btnGhost{background:#ffffff; border:1px solid rgba(18,18,18,.12); color:rgba(18,18,18,.86);} 
+    .btn:active{transform:translateY(1px)}
+
+    .note{margin:12px 0 0; text-align:center; color:rgba(18,18,18,.68); font-size:13px; line-height:1.65;} 
+
+    .footerLine{margin-top:14px; padding-top:14px; border-top:1px solid var(--line); text-align:center; color:rgba(18,18,18,.68); font-size:14px;} 
+
+    .phoneBox{display:inline-block; margin-top:8px; padding:8px 12px; border-radius:14px; background:#ffffff; border:1px solid rgba(18,18,18,.12); color:rgba(18,18,18,.90); font-weight:900; letter-spacing:.3px;} 
+
+    .error{display:none; margin:10px 0 0; padding:10px 12px; border-radius:14px; border:1px solid rgba(239,68,68,.35); background:rgba(239,68,68,.10); color:rgba(255,255,255,.92); font-size:13px; line-height:1.5; text-align:center;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <section class="hero" aria-label="Selena Cafe Lounge hiring">
+        <div class="brand">
+          <div class="mark">S</div>
+          <div class="name">
+            Selena
+            <small>Cafe Lounge</small>
+          </div>
+        </div>
+
+        <div class="heroText">
+          <h1 class="kicker">مطلوب</h1>
+          <div class="band">نادلون/ات لمقهى سيلينا</div>
+          <p class="sub">مُفضّل مع خبرة باريستا</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <form id="jobForm" class="grid" autocomplete="on">
+          <div>
+            <label for="fullName">الاسم الكامل <span class="req">*</span></label>
+            <input id="fullName" name="fullName" type="text" placeholder="مثال: أحمد علي" required />
+          </div>
+
+          <div class="two">
+            <div>
+              <label for="phone">رقم الهاتف <span class="req">*</span></label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="05X-XXXXXXX" required />
+            </div>
+            <div>
+              <label for="age">العمر <span class="req">*</span></label>
+              <input id="age" name="age" type="number" inputmode="numeric" min="14" max="80" placeholder="مثال: 22" required />
+            </div>
+          </div>
+
+          <div class="two">
+            <div>
+              <label for="exp">هل لديك خبرة؟</label>
+              <select id="exp" name="exp">
+                <option value="" selected>—</option>
+                <option>نعم</option>
+                <option>لا</option>
+              </select>
+            </div>
+            <div>
+              <label for="city">مكان السكن</label>
+              <input id="city" name="city" type="text" placeholder="مثال: حيفا" />
+            </div>
+          </div>
+
+          <div class="error" id="errorBox">يرجى تعبئة الحقول المطلوبة بشكل صحيح.</div>
+
+          <div class="actions">
+            <button class="btn btnPrimary" type="submit">إرسال التفاصيل عبر واتساب</button>
+            <a class="btn btnGhost" id="igBtn" href="https://www.instagram.com/selena.cafe1/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">Instagram</a>
+          </div>
+
+          <div class="note">
+            بالضغط سيتم فتح رسالة جاهزة على واتساب.
+            <div class="phoneBox">052-3626582</div>
+          </div>
+
+          <div class="footerLine">Selena Cafe Lounge</div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const WHATSAPP_NUMBER = "972523626582"; // 052-3626582
+    const IG_URL = "https://www.instagram.com/selena.cafe1/";
+
+    function track(eventName, params){
+      try{ if (typeof gtag === "function") gtag("event", eventName, params || {}); }catch(e){}
+    }
+
+    const form = document.getElementById("jobForm");
+    const errorBox = document.getElementById("errorBox");
+    const igBtn = document.getElementById("igBtn");
+
+    const cleanPhone = (val) => (val || "").replace(/[^\d]/g, "");
+
+    igBtn.addEventListener("click", () => {
+      track("click_instagram", { destination: IG_URL });
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      errorBox.style.display = "none";
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const phoneRaw = document.getElementById("phone").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const exp = document.getElementById("exp").value.trim();
+      const city = document.getElementById("city").value.trim();
+
+      const phone = cleanPhone(phoneRaw);
+      if (!fullName || !phone || phone.length < 9 || !age) {
+        errorBox.style.display = "block";
+        return;
+      }
+
+      const lines = [
+        "مرحباً، أود التقدّم للوظيفة",
+        "",
+        `الاسم: ${fullName}`,
+        `الهاتف: ${phoneRaw}`,
+        `العمر: ${age}`
+      ];
+
+      if (exp) lines.push(`خبرة: ${exp}`);
+      if (city) lines.push(`السكن: ${city}`);
+
+      const text = encodeURIComponent(lines.join("\n"));
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+      track("click_whatsapp", { destination: `wa.me/${WHATSAPP_NUMBER}`, age: age });
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
