@@ -27,7 +27,9 @@
       --stone:#d5bba4;     /* حجر/بيج */
       --stone2:#caa98b;
       --dark:#121212;
-      --accent:#d5bba4;    /* أزرار */
+      --accent:#d5bba4;    /* أزرار (لون عام) */
+      --wa1:#25D366;       /* WhatsApp */
+      --wa2:#25D366;
       --accentText:#121212;
       --radius:18px;
       --shadow:0 18px 60px rgba(0,0,0,.18);
@@ -105,7 +107,7 @@
 
     .grid{display:grid; gap:12px;}
     label{display:block; font-size:13px; color:rgba(18,18,18,.78); margin-bottom:6px;} 
-    .req{color:#ffb4b4; margin-right:6px;}
+    .req{color:#ef4444; margin-right:6px;}
     input, select{
       width:100%;
       padding:12px 12px;
@@ -143,7 +145,13 @@
       font-weight:900;
       font-size:16px;
     }
-    .btnPrimary{background:linear-gradient(135deg, var(--accent), var(--stone2)); color:var(--accentText);}
+    .btnPrimary{
+      background:var(--wa2);
+      color:#ffffff;
+      box-shadow:0 12px 28px rgba(37,211,102,.20);
+    }
+    .btnPrimary:hover{filter:brightness(.96)}
+    .btnPrimary:focus{outline:0; box-shadow:0 0 0 4px rgba(37,211,102,.18), 0 12px 28px rgba(37,211,102,.20);}
     .btnGhost{background:#ffffff; border:1px solid rgba(18,18,18,.12); color:rgba(18,18,18,.86);} 
     .btn:active{transform:translateY(1px)}
 
@@ -153,7 +161,19 @@
 
     .phoneBox{display:inline-block; margin-top:8px; padding:8px 12px; border-radius:14px; background:#ffffff; border:1px solid rgba(18,18,18,.12); color:rgba(18,18,18,.90); font-weight:900; letter-spacing:.3px;} 
 
-    .error{display:none; margin:10px 0 0; padding:10px 12px; border-radius:14px; border:1px solid rgba(239,68,68,.35); background:rgba(239,68,68,.10); color:rgba(255,255,255,.92); font-size:13px; line-height:1.5; text-align:center;}
+    .error{
+      display:none;
+      margin:10px 0 0;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(239,68,68,.45);
+      background:rgba(239,68,68,.12);
+      color:#7a1f1f;
+      font-size:13px;
+      line-height:1.6;
+      text-align:center;
+      font-weight:800;
+    }
   </style>
 </head>
 
@@ -212,7 +232,9 @@
           <div class="error" id="errorBox">يرجى تعبئة الحقول المطلوبة بشكل صحيح.</div>
 
           <div class="actions">
-            <button class="btn btnPrimary" type="submit">إرسال التفاصيل عبر واتساب</button>
+            <button class="btn btnPrimary" type="submit" aria-label="WhatsApp">
+              إرسال التفاصيل عبر واتساب
+            </button>
             <a class="btn btnGhost" id="igBtn" href="https://www.instagram.com/selena.cafe1/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">Instagram</a>
           </div>
 
